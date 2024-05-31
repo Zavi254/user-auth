@@ -3,7 +3,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const app = express();
@@ -12,7 +11,7 @@ const mongoURI = process.env.MONGODB_URI
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json())
 
 // Routes
 const authRoutes = require("./routes/authRoutes");
